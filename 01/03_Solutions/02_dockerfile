@@ -1,0 +1,15 @@
+# Fetch OS
+FROM ubuntu:20.04
+# Run update, install curl and remove all installation files
+RUN apt-get update && apt-get install -y nano \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create a home-directory hmuster
+RUN mkdir /home/gada
+# Setup environmental variables
+ENV USER gada
+ENV SHELL /bin/bash
+ENV LOGNAME gada
+CMD ["bash"]
+
