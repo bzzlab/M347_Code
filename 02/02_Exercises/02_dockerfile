@@ -1,0 +1,13 @@
+# Fetch OS
+FROM ubuntu:20.04
+# Run update, install packages and remove all installation files
+RUN apt-get update && apt-get install -y openssl nano \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create a usr gada
+RUN useradd -g users -m -d /home/gada \
+      -s /bin/bash -p $(echo gada | openssl passwd -1 -stdin) gada
+
+ENV HOSTNAME m347server
+CMD ["bash"]

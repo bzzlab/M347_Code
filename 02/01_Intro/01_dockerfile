@@ -1,0 +1,12 @@
+# Ubuntu trusty version installieren
+FROM ubuntu:trusty
+# Add metadata as key-value-pair
+LABEL   Creator: "m347-user1" \
+        Version: "1.0"
+# Updaten without confirmation (non-interactive)
+RUN apt-get update -y
+# configure container at the starting point
+# ping localhost 5 times when the container is running
+ENTRYPOINT ["/bin/ping","-c","5"]
+CMD ["localhost"]
+
