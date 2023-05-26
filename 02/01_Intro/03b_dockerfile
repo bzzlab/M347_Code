@@ -1,0 +1,9 @@
+# child-dockerfile
+ARG IMG=base_img3a
+FROM ${IMG}:latest
+CMD ["bash"]
+
+
+
+
+
