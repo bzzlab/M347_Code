@@ -9,5 +9,9 @@ RUN apt-get update && apt-get install -y openssl nano \
 RUN useradd -g users -m -d /home/gada \
       -s /bin/bash -p $(echo gada | openssl passwd -1 -stdin) gada
 
+# Test if user works in bash
+# su - gada
+# su - <username>
+
 ENV HOSTNAME m347server
 CMD ["bash"]
