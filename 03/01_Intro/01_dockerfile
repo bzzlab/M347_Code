@@ -1,0 +1,18 @@
+# Implement docker healthcheck and stopsignal using dockerfile
+# Containerize a simple flask deploy
+#
+FROM ubuntu:18.04
+RUN apt-get update -y && \
+    apt-get install -y python-pip python-01_dev curl \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+COPY ./deploy /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+# Check every 10s if curl fails requesting the url.
+# If it fails then restart the container
+HEALTHCHECK --interval=10s --timeout=30s CMD curl --fail http://localhost:5000/ || exit 1
+CMD ["python", "app.py"]
+# stopping process immediatly (in contrary to SIGTERM)
+STOPSIGNAL SIGKILL
+
