@@ -1,6 +1,6 @@
 ### Aufgabe 2: App als Container publizieren
 1. Erstellen Sie auf Basis eines Dockerfiles ein Image mit
-   1. Ubuntu 20.04, welches gleich ohne Bestätigung das Betriebssystem updated,
+   1. Ubuntu 18.04, welches gleich ohne Bestätigung das Betriebssystem updated,
    ```python-pip python-dev curl``` installiert und die Installationsdateien danach löscht
    2. das Verzeichnis ```deploy``` ins Verzeichnis ```app``` kopiert 
    3. das Verzeichnis ```app``` zum Arbeitsverzeichnis definiert
