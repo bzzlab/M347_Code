@@ -14,6 +14,9 @@ cp ./deactivate venv/Scripts/deactivate
 export FLASK_ENV=development
 # Activate the virtual environment. (venv) in the command prompt should appear
 source venv/Scripts/activate
+## installing the preserved packages
+pip install -r requirements.txt
+
 
 #### Steps
 1. Starten Sie Python-App lokal auf Ihrem Rechner
