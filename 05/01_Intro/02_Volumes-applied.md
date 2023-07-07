@@ -33,7 +33,7 @@ $ docker container inspect --format "{{json .Mounts}}" con_02 | python -m json.t
 ]
 ```
 3. Access the container by executing the bash-shell, 
-then change to the log files and list the output. 
+then change to the log directory and list the output. 
 ```
 $ docker exec -it con_02 bash
 root@ce8814c76880:/#
